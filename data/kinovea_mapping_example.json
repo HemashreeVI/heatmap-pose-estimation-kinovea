@@ -1,0 +1,13 @@
+{
+  "time_column": "Time (ms)",
+  "time_unit": "ms",
+  "points": {
+    "left_hip":   {"x": "Hip/X",   "y": "Hip/Y"},
+    "left_knee":  {"x": "Knee/X",  "y": "Knee/Y"},
+    "left_ankle": {"x": "Ankle/X", "y": "Ankle/Y"}
+  },
+  "angles": {
+    "left_knee": "Knee angle"
+  },
+  "coords": {"px_per_unit": 1.0, "origin_px": [0, 0], "y_up": false}
+}

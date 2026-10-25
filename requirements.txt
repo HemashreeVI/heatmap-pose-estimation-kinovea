@@ -1,0 +1,13 @@
+# torch + torchvision: install the build for your CUDA first
+# then see README "Local install" for mmcv (compiled) and mmpose (--no-deps)
+mmengine==0.10.7
+mmpose==1.3.2
+numpy
+opencv-python
+matplotlib
+pandas
+scipy
+openpyxl
+json_tricks
+munkres
+xtcocotools
