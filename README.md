@@ -1,40 +1,24 @@
-# Human Pose Estimation using Heatmaps
+<p align="center">
+  <img src="./assets/readme/hero.svg" width="100%" alt="Pose Heatmaps: Where is every joint, and how sure is the model? Measured against Kinovea.">
+</p>
 
-![Human pose estimation using heatmaps: skeleton and joint heatmaps over a skier](docs/assets/preview.png)
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-E6C35C?style=for-the-badge" alt="Python"> <img src="https://img.shields.io/badge/MMPose-E6C35C?style=for-the-badge" alt="MMPose"> <img src="https://img.shields.io/badge/HRNet--W32-E6C35C?style=for-the-badge" alt="HRNet-W32"> <img src="https://img.shields.io/badge/OpenCV-E6C35C?style=for-the-badge" alt="OpenCV"> <img src="https://img.shields.io/badge/Matplotlib-E6C35C?style=for-the-badge" alt="Matplotlib"> <img src="https://img.shields.io/badge/Kinovea-E6C35C?style=for-the-badge" alt="Kinovea">
+</p>
 
-<sub>Illustration: COCO human-annotated keypoints drawn as the Gaussian heatmaps a heatmap model learns to predict.
-Photo: COCO dataset / Flickr #6795644157, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/). Generated with `tools/make_preview.py`.</sub>
+<img src="./assets/readme/title-features.svg" width="100%" alt="01 Features: What it does.">
+<img src="./assets/readme/features.svg" width="100%" alt="Pose Heatmaps features">
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/HemashreeVI/heatmap-pose-estimation-kinovea/blob/main/notebooks/Human_Pose_Estimation_MMPose.ipynb)
+<img src="./assets/readme/title-flow.svg" width="100%" alt="02 Pipeline: From video to verdict.">
+<img src="./assets/readme/flow.svg" width="100%" alt="Detect → Estimate → Analyse → Validate">
 
-Heatmap-based 2-D human pose estimation with **MMPose**, analysis of the
-**joint-confidence heatmaps** with **OpenCV** and **Matplotlib**, and validation
-of the predicted keypoints against **Kinovea** motion-analysis measurements.
+<img src="./assets/readme/title-table.svg" width="100%" alt="03 Outputs: What each step produces.">
+<img src="./assets/readme/table.svg" width="100%" alt="Outputs">
 
-*Research internship, VIT Chennai (May–Jul 2025). Stack: MMPose, OpenCV, Kinovea, Matplotlib, Python.*
+<img src="./assets/readme/title-stack.svg" width="100%" alt="04 Tech stack: The tools behind it.">
+<img src="./assets/readme/stack.svg" width="100%" alt="Pose Heatmaps tech stack">
 
-> This is a rebuild of the internship code. The original Colab notebooks were lost.
-> The method is the same, but any numbers have to be regenerated from your own
-> videos and Kinovea data.
-
-## What it does
-
-| Step | Script | Output |
-|---|---|---|
-| 1. Pose estimation | `scripts/run_pose.py` | HRNet-W32 top-down heatmap model (COCO-17 joints). Saves keypoints, scores **and the raw 64×48 heatmap of every joint in every frame** |
-| 2. Heatmap analysis | `scripts/analyse_heatmaps.py` | Heatmap overlays (OpenCV), 17-panel per-joint heatmap grids, confidence timelines, and per-joint reliability stats (Matplotlib) |
-| 3. Kinovea validation | `scripts/compare_kinovea.py` | Keypoint error (px), RMSE, PCK, joint-angle MAE/RMSE, Bland–Altman, and whether low heatmap confidence predicts large errors |
-
-### How the heatmaps are used to judge reliability
-For each joint, the model's heatmap is projected back onto the image and three values are measured:
-
-* **peak**: the confidence, i.e. the heatmap maximum (MMPose's keypoint score)
-* **spread**: the spatial standard deviation of the blob in image pixels. A wide blob means the location is uncertain
-* **second peak**: the strongest other local maximum divided by the main peak. A value near 1 means the model is torn between two places, such as left/right confusion or crossing limbs
-
-A joint is flagged **unreliable** when `peak < 0.3`, `spread > 8% of the person box`, or
-`second peak > 0.5` (all adjustable). The Kinovea comparison then checks whether flagged
-joints really have larger errors.
+<img src="./assets/readme/title-run.svg" width="100%" alt="05 Run it: Try it yourself.">
 
 ## Quick start (Google Colab)
 
@@ -43,6 +27,7 @@ The notebook doesn't need anything else from this repo: it writes all the code i
 
 The first install compiles MMCV from source, which can take 30–60 min on Colab. The compiled wheel is
 cached in Google Drive, so later sessions install it in seconds.
+
 
 ## Local install (Linux, Python 3.10–3.12)
 
@@ -63,6 +48,7 @@ Why it's done this way:
 * **setuptools<70** is needed because MMCV's `setup.py` still imports `pkg_resources`.
 * **mmdet** is installed only because MMPose imports a few of its utilities. Its MMCV version check is relaxed, and people are detected with torchvision's Faster R-CNN, not mmdet.
 * **xtcocotools** has to be compiled against the NumPy you have installed. Otherwise you get `numpy.dtype size changed`.
+
 
 ## Usage
 
@@ -105,6 +91,7 @@ languages, a small JSON mapping tells the loader which column is which:
 * `--auto-align` fits scale and offset automatically. Use it only when the coordinate system is
   unknown, because it also hides any global bias of the model.
 
+
 ## Outputs
 
 ```
@@ -117,6 +104,7 @@ results/<name>/
                       error_per_joint.png, trajectory_<joint>.png, angles.png, report.json
 ```
 
+
 ## Repo layout
 
 ```
@@ -127,6 +115,7 @@ docs/assets/ README banner (generated by tools/make_preview.py)
 tests/       test_synthetic_pipeline.py: checks steps 2–3 on synthetic data, no MMPose needed
 ```
 
+
 ## About the author
 
 <p align="center">
@@ -136,6 +125,11 @@ tests/       test_synthetic_pipeline.py: checks steps 2–3 on synthetic data, n
 Built during my research internship at VIT Chennai (May–Jul 2025) under Prof. Pavithra,
 then rebuilt and extended as this open-source project. GitHub: [@HemashreeVI](https://github.com/HemashreeVI)
 
+
 ## License
 
 [MIT](LICENSE)
+
+<p align="center">
+  <img src="./assets/readme/footer.svg" width="100%" alt="Research internship · VIT Chennai · May–Jul 2025 Built by Hemashree.">
+</p>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 258" width="1200" height="258" role="img" aria-labelledby="tbl-t tbl-d">
+<title id="tbl-t">Outputs</title>
+<desc id="tbl-d">Step: 1. Pose estimation, Script: run_pose.py, Output: keypoints, scores and every joint's raw heatmap; Step: 2. Heatmap analysis, Script: analyse_heatmaps.py, Output: overlays, 17-joint grids, confidence timelines; Step: 3. Kinovea validation, Script: compare_kinovea.py, Output: error, RMSE, PCK, angles, confidence vs error</desc>
+<style>
+.serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}.sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+.twinkle{animation:tw 4s ease-in-out infinite}@keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
+.pulse{animation:pl 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pl{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.35)}}
+.spin{animation:sp 60s linear infinite}@keyframes sp{to{transform:rotate(360deg)}}
+.spinr{animation:sr 40s linear infinite}@keyframes sr{to{transform:rotate(-360deg)}}
+.float{animation:fl 6s ease-in-out infinite}@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.fadein{animation:fi 1.2s ease-out both}@keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+</style>
+<defs>
+<radialGradient id="tbl-bg" cx="70%" cy="30%" r="90%"><stop offset="0" stop-color="#0E2E20"/><stop offset=".55" stop-color="#081A12"/><stop offset="1" stop-color="#04100B"/></radialGradient>
+<radialGradient id="tbl-glowA" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#138A5A" stop-opacity=".5"/><stop offset="1" stop-color="#138A5A" stop-opacity="0"/></radialGradient>
+<radialGradient id="tbl-glowB" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#E6C35C" stop-opacity=".14"/><stop offset="1" stop-color="#E6C35C" stop-opacity="0"/></radialGradient>
+<linearGradient id="tbl-metal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#F5E2A0"/><stop offset="1" stop-color="#E6C35C"/></linearGradient>
+<linearGradient id="tbl-rule" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E6C35C" stop-opacity="0"/><stop offset=".25" stop-color="#E6C35C" stop-opacity=".85"/><stop offset="1" stop-color="#E6C35C" stop-opacity="0"/></linearGradient>
+<pattern id="tbl-grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#E6C35C" stroke-opacity=".05"/></pattern>
+</defs>
+<rect x="1" y="1" width="1198" height="256" rx="22" fill="url(#tbl-bg)" stroke="#163A2A"/>
+<rect x="1" y="1" width="1198" height="256" rx="22" fill="url(#tbl-grid)"/>
+<ellipse cx="960" cy="77" rx="420" ry="181" fill="url(#tbl-glowA)"/>
+<ellipse cx="240" cy="181" rx="300" ry="129" fill="url(#tbl-glowB)"/><rect x="40" y="40" width="1120" height="178" rx="14" fill="#0B2218" stroke="#22573F"/><text x="58" y="70" class="mono" font-size="11" fill="#E6C35C" text-anchor="start" letter-spacing="2">STEP</text><text x="304" y="70" class="mono" font-size="11" fill="#E6C35C" text-anchor="start" letter-spacing="2">SCRIPT</text><text x="596" y="70" class="mono" font-size="11" fill="#E6C35C" text-anchor="start" letter-spacing="2">OUTPUT</text><rect x="40" y="86" width="1120" height="1.2" fill="url(#tbl-rule)"/><text x="58" y="114" class="serif" font-size="16" fill="#EFF6F0" text-anchor="start" >1. Pose estimation</text><text x="304" y="114" class="mono" font-size="13" fill="#C6D9CD" text-anchor="start" >run_pose.py</text><text x="596" y="114" class="mono" font-size="13" fill="#C6D9CD" text-anchor="start" >keypoints, scores and every joint's raw heatmap</text><line x1="58" y1="130" x2="1142" y2="130" stroke="#163A2A"/><text x="58" y="158" class="serif" font-size="16" fill="#EFF6F0" text-anchor="start" >2. Heatmap analysis</text><text x="304" y="158" class="mono" font-size="13" fill="#C6D9CD" text-anchor="start" >analyse_heatmaps.py</text><text x="596" y="158" class="mono" font-size="13" fill="#C6D9CD" text-anchor="start" >overlays, 17-joint grids, confidence timelines</text><line x1="58" y1="174" x2="1142" y2="174" stroke="#163A2A"/><text x="58" y="202" class="serif" font-size="16" fill="#EFF6F0" text-anchor="start" >3. Kinovea validation</text><text x="304" y="202" class="mono" font-size="13" fill="#C6D9CD" text-anchor="start" >compare_kinovea.py</text><text x="596" y="202" class="mono" font-size="13" fill="#C6D9CD" text-anchor="start" >error, RMSE, PCK, angles, confidence vs error</text>
+</svg>
